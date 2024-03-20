@@ -43,6 +43,7 @@ module "aks_cluster" {
   aks_cluster_name     = var.aks_cluster_name
   aks_cluster_version  = var.aks_cluster_version
   aks_subnet_id        = module.subnets.aks_subnet_id
+  appgw_id             = module.app_gateway.appgw_id
 }
 
 # Create Application Gateway
@@ -55,3 +56,14 @@ module "app_gateway" {
   application_gateway_size  = var.application_gateway_size
   application_gateway_sku   = var.application_gateway_sku
 }
+
+# Create Graylog with Helm
+#module "helm_graylog" {
+#  source           = "./modules/helm_graylog"
+#  kube_config_path = "~/.kube/config"
+#  release_name     = "graylog"
+#  namespace        = "graylog"
+#  chart_repository = "https://helm.graylog.org"
+#  chart_name       = "graylog"
+#  chart_version    = "1.8.0"
+#}

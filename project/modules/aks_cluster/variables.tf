@@ -22,3 +22,8 @@ variable "aks_subnet_id" {
   description = "Subnet ID for the AKS Cluster"
   type        = string
 }
+
+variable "appgw_id" {
+  description = "Application Gateway ID"
+  type        = string
+}
