@@ -57,13 +57,3 @@ module "app_gateway" {
   application_gateway_sku   = var.application_gateway_sku
 }
 
-# Create Graylog with Helm
-#module "helm_graylog" {
-#  source           = "./modules/helm_graylog"
-#  kube_config_path = "~/.kube/config"
-#  release_name     = "graylog"
-#  namespace        = "graylog"
-#  chart_repository = "https://helm.graylog.org"
-#  chart_name       = "graylog"
-#  chart_version    = "1.8.0"
-#}
